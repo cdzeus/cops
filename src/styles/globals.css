@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}*/
+@font-face {
+  font-family: 'Inter';
+  src: url('/font/inter.ttf') format('ttf');
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+
+}
+
+a:hover {
+  @apply text-primary
+}
+
+.input  input{
+  transition: 300ms ease-in-out;
+  @apply h-10 border-b-2 border-gray-500 text-gray-700 px-5
+}
+.input  input:hover{
+  @apply  border-primary-400
+}
+.input  input:focus{
+  @apply  border-primary-400 outline-0 text-gray-800
+}
+.input input::placeholder {
+  @apply  py-10 text-gray-600
+}
+
+.dropdown {
+  @apply relative w-[300px] h-12 
+}
+.dropdown input{
+  @apply absolute top-0 left-0 w-full h-full
+  cursor-pointer bg-white border-none outline-0
+  shadow-sm py-3 px-5 rounded placeholder:text-gray-600 text-gray-700
+  hover:bg-primary-200
+}
+.dropdown .option{
+  list-style: none;
+  @apply absolute top-[70px] w-full bg-white
+  shadow-sm rounded overflow-hidden z-10
+}
+.dropdown .option div{
+  @apply py-3 px-5 cursor-pointer text-gray-700
+}
+.dropdown .option div:hover{
+  @apply bg-primary-300 text-white
+}
+.arrowDown{
+  @apply z-20 text-gray-600 absolute w-6 h-6 right-4 top-3
+}
+.inputQtte{
+  @apply  w-[60px] px-[14px] h-[45px] 
+  outline-0 rounded shadow-sm text-gray-700  hover:bg-primary-200
+  overflow-hidden text-center placeholder:text-gray-600
+  focus:text-gray-800 focus:bg-primary-300 focus:text-center font-semibold
+}
+
+
